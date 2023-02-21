@@ -6,9 +6,22 @@ using System.Threading.Tasks;
 
 namespace GigaConverter
 {
-    internal class Iinput
+    internal interface Iinput
     {
-        public string i1 { get; set; }
-        public string i2 { get; set; }
+        public int i1 { get; set; }
+        public int i2 { get; set; }
+        public char ic { get; set; }
+
+        public void Calculation()
+        {
+            if (ic == '/')
+            {
+                i1 = i1 / i2;
+            }
+            else
+            {
+                i1 = i1 * i2;
+            }
+        }
     }
 }
