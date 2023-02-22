@@ -8,26 +8,9 @@ namespace GigaConverter
 {
     internal interface Icalculation
     {
-        public int I1
+        public int Input
         {
             get; set;
-        }
-        public int I2
-        {
-            get; set;
-        }
-        public char Ic { get; set; }
-
-        public void Calculation()
-        {
-            if (Ic == '/')
-            {
-                I1 = I1 / I2;
-            }
-            else
-            {
-                I1 = I1 * I2;
-            }
         }
     }
 }   

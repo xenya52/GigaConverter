@@ -8,26 +8,17 @@ namespace GigaConverter
 {
     internal class Length : Icalculation
     {
-        public int I1
+        //Eingabe des Users
+        public int Input
         {
             get; set;
-        }
-        public int I2
+        } 
+        //Wert für die Umwandlung der Eingabe
+        public int[] lengths = new int [6] ;
+        //Umwandlung der Eingabe
+        public void Convert()
         {
-            get; set;
-        }
-        public char Ic { get; set; }
 
-        public void Calculation()
-        {
-            if (Ic == '/')
-            {
-                I1 = I1 / I2;
-            }
-            else
-            {
-                I1 = I1 * I2;
-            }
         }
     }
 }
