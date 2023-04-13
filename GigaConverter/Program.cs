@@ -4,10 +4,14 @@ class program
 {
     public static void Main(string[] args)
     {
-        //test
-        Length test1 = new();
-        test1.Lengths[0] = 1;
-        Console.WriteLine(test1.Convert);
-        //failed offf...
+        Length test = new();
+        Console.WriteLine("Define UserNumberInput");
+        test.UserNumberInput = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Define KilometerUserInput");
+        test.KilometerUserInput = Convert.ToInt32(Console.ReadLine());
+        test.KmCalculationMethod();
+        Console.WriteLine("Solution = " + test.UserNumberInput);
+        Console.ReadLine();
+
     }
 }

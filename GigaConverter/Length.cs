@@ -6,42 +6,35 @@ using System.Threading.Tasks;
 
 namespace GigaConverter
 {
-    internal class Length : Icalculation
+    internal class Length
     {
-        //Eingabe des Users
-        public int Input
+        public double UserNumberInput { get; set; }
+        
+        //Kilometer
+        public int KilometerUserInput { get; set; } // 0 = M, 1 = Dc, 2 = Cm, 3 = Mm, 4 = Mk, 5 = Nm,
+
+        //KmCalculation
+        public void KmCalculationMethod()
         {
-            get; set;
-        }
-        //Wert für die Umwandlung der Eingabe
-        public /*just 4 the test public*/ int[] Lengths { get; set; } = new int[5];
-        //Umwandlung der Eingabe
-        public void Convert()
-        {
-            switch (Lengths[0])
+            double solution = 0;
+
+            switch (KilometerUserInput)
             {
-                case 1:
-                    Console.WriteLine("Km in Meter");
-                    break;
-                case 2:
-                    Console.WriteLine("Km in Zentimeter");
-                    break;
-                case 3:
-                    Console.WriteLine("Km in Millimeter");
-                    break;
-                case 4:
-                    Console.WriteLine("Km in Mikrometer");
-                    break;
-                case 5:
-                    Console.WriteLine("Km in Nanometer");
-                    break;
+                
+                case 0: solution = UserNumberInput * 1000; break;
+                case 1: solution = UserNumberInput * 10000; break;
+                case 2: solution = UserNumberInput * 100000; break;
+                case 3: solution = UserNumberInput * 1000000; break;
+                case 4: solution = UserNumberInput * 1000000000; break;
+                case 5: solution = UserNumberInput * 1000000000000; break;
             }
+            UserNumberInput = solution;
         }
     }
 }
 
 /* 
- * 0Kilometer  (=> Meter * 1000 => Zentimeter 100000 => Millimeter 1* 10 hoch 6 => Mikrometer 1* 10 hoch 9 => Nanometer 1* 10 hoch 12)
+ * 0Kilometer  (=> Meter * 1000 => => Dezimeter *10000 => Zentimeter 100000 => Millimeter 1* 10 hoch 6 => Mikrometer 1* 10 hoch 9 => Nanometer 1* 10 hoch 12)
  * 1Meter      (=> Kilometer /1000 => Zentimeter *100 => Millimeter *1000 => Mikrometer 1* 10 hoch 6 => Nanometer 1* 10 hoch 9)
  * 2Zentimeter (=> Kilometer /100000 => Meter /100 => Millimeter *10 => Mikrometer *10000 => Nanometer 1* hoch 7)
  * 3Millimeter (=> Kilometer 1* 10 hoch 6 => Meter *1000 => Zentimeter *10 => Mikrometer *1000 =>Nanometer => 1* 10 hoch 6)
