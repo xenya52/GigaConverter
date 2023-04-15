@@ -8,7 +8,7 @@ class program
         Console.WriteLine("Define UserNumberInput");
         test.UserNumberInput = Convert.ToDouble(Console.ReadLine());
         Console.WriteLine("Define KilometerUserInput");
-        test.KilometerUserInput = Convert.ToInt32(Console.ReadLine());
+        test.UserDesicion = Convert.ToInt32(Console.ReadLine());
         test.KmCalculationMethod();
         Console.WriteLine("Solution = " + test.UserNumberInput);
         Console.ReadLine();

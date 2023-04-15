@@ -6,38 +6,127 @@ using System.Threading.Tasks;
 
 namespace GigaConverter
 {
-    internal class Length
+    internal class Length : InputAndSolution
     {
-        public double UserNumberInput { get; set; }
         
         //Kilometer
-        public int KilometerUserInput { get; set; } // 0 = M, 1 = Dc, 2 = Cm, 3 = Mm, 4 = Mk, 5 = Nm,
-
-        //KmCalculation
         public void KmCalculationMethod()
         {
-            double solution = 0;
+            switch (UserDesicion)
+            {
+                case 0: solution = UserNumberInput; break;
+                case 1: solution = UserNumberInput * 1000; break;
+                case 2: solution = UserNumberInput * 10000; break;
+                case 3: solution = UserNumberInput * 100000; break;
+                case 4: solution = UserNumberInput * 1000000; break;
+                case 5: solution = UserNumberInput * 1000000000; break;
+                case 6: solution = UserNumberInput * 1000000000000; break;
+            }
+            UserNumberInput = solution;
 
-            switch (KilometerUserInput)
+        }
+        //Meter
+        public void MCalculationMethod()
+        {
+            switch (UserDesicion)
             {
                 
-                case 0: solution = UserNumberInput * 1000; break;
-                case 1: solution = UserNumberInput * 10000; break;
-                case 2: solution = UserNumberInput * 100000; break;
-                case 3: solution = UserNumberInput * 1000000; break;
-                case 4: solution = UserNumberInput * 1000000000; break;
-                case 5: solution = UserNumberInput * 1000000000000; break;
+                case 0: solution = UserNumberInput / 1000; break;
+                case 1: solution = UserNumberInput; break;
+                case 2: solution = UserNumberInput * 10; break;
+                case 3: solution = UserNumberInput * 100; break;
+                case 4: solution = UserNumberInput * 1000; break;
+                case 5: solution = UserNumberInput * 1000000; break;
+                case 6: solution = UserNumberInput * 1000000000; break;
+            }
+            UserNumberInput = solution;
+        }
+        
+        //Decimeter
+        public void DmCalculationMethod()
+        {
+            switch (UserDesicion)
+            {
+                
+                case 0: solution = UserNumberInput / 10000; break;
+                case 1: solution = UserNumberInput / 10; break;
+                case 2: solution = UserNumberInput; break;
+                case 3: solution = UserNumberInput * 10; break;
+                case 4: solution = UserNumberInput * 100; break;
+                case 5: solution = UserNumberInput * 100000; break;
+                case 6: solution = UserNumberInput * 100000000; break;
+            }
+            UserNumberInput = solution;
+        }
+        
+        //Centimeter
+        public void CmCalculationMethod()
+        {
+            switch (UserLengthDesicion)
+            {
+                
+                case 0: solution = UserNumberInput / 100000; break;
+                case 1: solution = UserNumberInput / 100; break;
+                case 2: solution = UserNumberInput / 10; break;
+                case 3: solution = UserNumberInput; break;
+                case 4: solution = UserNumberInput * 10; break;
+                case 5: solution = UserNumberInput * 10000; break;
+                case 6: solution = UserNumberInput * 10000000; break;
+            }
+            UserNumberInput = solution;
+        }
+        
+        //Millimeter
+        public void MmCalculationMethod()
+        {
+            switch (UserLengthDesicion)
+            {
+                
+                case 0: solution = UserNumberInput / 1000000; break;
+                case 1: solution = UserNumberInput / 1000; break;
+                case 2: solution = UserNumberInput / 100; break;
+                case 3: solution = UserNumberInput / 10; break;
+                case 4: solution = UserNumberInput; break;
+                case 5: solution = UserNumberInput * 1000; break;
+                case 6: solution = UserNumberInput * 1000000; break;
+            }
+            UserNumberInput = solution;
+        }
+        
+        //Mikrometer
+        public void MkCalculationMethod()
+        {
+            switch (UserLengthDesicion)
+            {
+                
+                case 0: solution = UserNumberInput / 1000000000; break;
+                case 1: solution = UserNumberInput / 1000000; break;
+                case 3: solution = UserNumberInput / 100000; break;
+                case 4: solution = UserNumberInput / 10000; break;
+                case 5: solution = UserNumberInput / 1000; break;
+                case 2: solution = UserNumberInput; break;
+                case 6: solution = UserNumberInput * 1000; break;
+            }
+            UserNumberInput = solution;
+        }
+        
+        //Nanometer
+        public void NmCalculationMethod()
+        {
+            switch (UserLengthDesicion)
+            {
+                
+                case 0: solution = UserNumberInput / 1000000000000; break;
+                case 1: solution = UserNumberInput / 1000000000; break;
+                case 2: solution = UserNumberInput / 100000000; break;
+                case 3: solution = UserNumberInput / 10000000; break;
+                case 4: solution = UserNumberInput / 1000000; break;
+                case 5: solution = UserNumberInput / 1000; break;
+                case 6: solution = UserNumberInput; break;
             }
             UserNumberInput = solution;
         }
     }
 }
 
-/* 
- * 0Kilometer  (=> Meter * 1000 => => Dezimeter *10000 => Zentimeter 100000 => Millimeter 1* 10 hoch 6 => Mikrometer 1* 10 hoch 9 => Nanometer 1* 10 hoch 12)
- * 1Meter      (=> Kilometer /1000 => Zentimeter *100 => Millimeter *1000 => Mikrometer 1* 10 hoch 6 => Nanometer 1* 10 hoch 9)
- * 2Zentimeter (=> Kilometer /100000 => Meter /100 => Millimeter *10 => Mikrometer *10000 => Nanometer 1* hoch 7)
- * 3Millimeter (=> Kilometer 1* 10 hoch 6 => Meter *1000 => Zentimeter *10 => Mikrometer *1000 =>Nanometer => 1* 10 hoch 6)
- * 4Mikrometer (=> Kilometer=> Meter=> Zentimeter=> Millimeter =>Nanometer
- * 5Nanometer  (=> Kilometer=> Meter=> Zentimeter=> Millimeter =>Mikrometer
- */
+/* Längen =  Km, 1000; M, 10; Dm, 10; Cm, 10; Mm 10; Mk, 1000; Nm, 1000; */
