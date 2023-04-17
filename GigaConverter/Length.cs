@@ -62,7 +62,7 @@ namespace GigaConverter
         //Centimeter
         public void CmCalculationMethod()
         {
-            switch (UserLengthDesicion)
+            switch (UserDesicion)
             {
                 
                 case 0: solution = UserNumberInput / 100000; break;
@@ -79,7 +79,7 @@ namespace GigaConverter
         //Millimeter
         public void MmCalculationMethod()
         {
-            switch (UserLengthDesicion)
+            switch (UserDesicion)
             {
                 
                 case 0: solution = UserNumberInput / 1000000; break;
@@ -96,7 +96,7 @@ namespace GigaConverter
         //Mikrometer
         public void MkCalculationMethod()
         {
-            switch (UserLengthDesicion)
+            switch (UserDesicion)
             {
                 
                 case 0: solution = UserNumberInput / 1000000000; break;
@@ -113,7 +113,7 @@ namespace GigaConverter
         //Nanometer
         public void NmCalculationMethod()
         {
-            switch (UserLengthDesicion)
+            switch (UserDesicion)
             {
                 
                 case 0: solution = UserNumberInput / 1000000000000; break;
