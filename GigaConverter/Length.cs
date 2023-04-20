@@ -8,125 +8,35 @@ namespace GigaConverter
 {
     internal class Length : InputAndSolution
     {
-        
-        //Kilometer
-        public void KmCalculationMethod()
+        // Längen =  Km, 1000; M, 10; Dm, 10; Cm, 10; Mm 10; Mk, 1000; Nm, 1000;
+        private int[] LengthsChain = new int[7]
         {
-            switch (UserDesicion)
-            {
-                case 0: solution = UserNumberInput; break;
-                case 1: solution = UserNumberInput * 1000; break;
-                case 2: solution = UserNumberInput * 10000; break;
-                case 3: solution = UserNumberInput * 100000; break;
-                case 4: solution = UserNumberInput * 1000000; break;
-                case 5: solution = UserNumberInput * 1000000000; break;
-                case 6: solution = UserNumberInput * 1000000000000; break;
-            }
-            UserNumberInput = solution;
-
-        }
-        //Meter
-        public void MCalculationMethod()
+            1000, //Km
+            10, //M
+            10, //Dm
+            10, //Cm
+            10, //Mm
+            1000, //Mk
+            1000, //Nm
+        };
+        public void PositiveLengthCalculationMethod()   // UserDesicion = 0, KM; 1, M; 2, Dc; 3, Cm; 4, Mm; 5, Mk; 6, Nm;
         {
-            switch (UserDesicion)
+            for (int i = UserDesicionInput; i < UserDesicionOutput; i++)
             {
-                
-                case 0: solution = UserNumberInput / 1000; break;
-                case 1: solution = UserNumberInput; break;
-                case 2: solution = UserNumberInput * 10; break;
-                case 3: solution = UserNumberInput * 100; break;
-                case 4: solution = UserNumberInput * 1000; break;
-                case 5: solution = UserNumberInput * 1000000; break;
-                case 6: solution = UserNumberInput * 1000000000; break;
+                UserNumberInput = UserNumberInput * LengthsChain[i];
             }
-            UserNumberInput = solution;
-        }
-        
-        //Decimeter
-        public void DmCalculationMethod()
+            solution = UserNumberInput;
+            Console.WriteLine(solution+" positive");
+            }
+        public void NegativeLengthCalculationMethod()   // UserDesicion = 0, KM; 1, M; 2, Dc; 3, Cm; 4, Mm; 5, Mk; 6, Nm;
         {
-            switch (UserDesicion)
+            for (int i =UserDesicionInput; i > UserDesicionOutput; i--)
             {
-                
-                case 0: solution = UserNumberInput / 10000; break;
-                case 1: solution = UserNumberInput / 10; break;
-                case 2: solution = UserNumberInput; break;
-                case 3: solution = UserNumberInput * 10; break;
-                case 4: solution = UserNumberInput * 100; break;
-                case 5: solution = UserNumberInput * 100000; break;
-                case 6: solution = UserNumberInput * 100000000; break;
+                UserNumberInput = UserNumberInput / LengthsChain[i];
             }
-            UserNumberInput = solution;
-        }
-        
-        //Centimeter
-        public void CmCalculationMethod()
-        {
-            switch (UserDesicion)
-            {
-                
-                case 0: solution = UserNumberInput / 100000; break;
-                case 1: solution = UserNumberInput / 100; break;
-                case 2: solution = UserNumberInput / 10; break;
-                case 3: solution = UserNumberInput; break;
-                case 4: solution = UserNumberInput * 10; break;
-                case 5: solution = UserNumberInput * 10000; break;
-                case 6: solution = UserNumberInput * 10000000; break;
-            }
-            UserNumberInput = solution;
-        }
-        
-        //Millimeter
-        public void MmCalculationMethod()
-        {
-            switch (UserDesicion)
-            {
-                
-                case 0: solution = UserNumberInput / 1000000; break;
-                case 1: solution = UserNumberInput / 1000; break;
-                case 2: solution = UserNumberInput / 100; break;
-                case 3: solution = UserNumberInput / 10; break;
-                case 4: solution = UserNumberInput; break;
-                case 5: solution = UserNumberInput * 1000; break;
-                case 6: solution = UserNumberInput * 1000000; break;
-            }
-            UserNumberInput = solution;
-        }
-        
-        //Mikrometer
-        public void MkCalculationMethod()
-        {
-            switch (UserDesicion)
-            {
-                
-                case 0: solution = UserNumberInput / 1000000000; break;
-                case 1: solution = UserNumberInput / 1000000; break;
-                case 3: solution = UserNumberInput / 100000; break;
-                case 4: solution = UserNumberInput / 10000; break;
-                case 5: solution = UserNumberInput / 1000; break;
-                case 2: solution = UserNumberInput; break;
-                case 6: solution = UserNumberInput * 1000; break;
-            }
-            UserNumberInput = solution;
-        }
-        
-        //Nanometer
-        public void NmCalculationMethod()
-        {
-            switch (UserDesicion)
-            {
-                
-                case 0: solution = UserNumberInput / 1000000000000; break;
-                case 1: solution = UserNumberInput / 1000000000; break;
-                case 2: solution = UserNumberInput / 100000000; break;
-                case 3: solution = UserNumberInput / 10000000; break;
-                case 4: solution = UserNumberInput / 1000000; break;
-                case 5: solution = UserNumberInput / 1000; break;
-                case 6: solution = UserNumberInput; break;
-            }
-            UserNumberInput = solution;
+            solution = UserNumberInput;
+            Console.WriteLine(solution + " negative");
         }
     }
 }
 
-/* Längen =  Km, 1000; M, 10; Dm, 10; Cm, 10; Mm 10; Mk, 1000; Nm, 1000; */
