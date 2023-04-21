@@ -4,7 +4,7 @@ class program
 {
     public static void Main(string[] args)
     {
-        Length test = new();
+        Time test = new();
         Console.WriteLine("Define UserNumberInput");
         test.UserNumberInput = Convert.ToDouble(Console.ReadLine());
         Console.WriteLine("UserDesicionInput");
@@ -15,12 +15,12 @@ class program
         //LengthCalculationmethodtest
         if (test.UserDesicionInput < test.UserDesicionOutput)
         {
-            test.PositiveLengthCalculationMethod();
+            test.PositiveTimeCalculationMethod();
         }
-        else if (test.UserDesicionInput > test.UserDesicionOutput)
+        /* ISSUES ... else if (test.UserDesicionInput > test.UserDesicionOutput)
         {
-            test.NegativeLengthCalculationMethod();
-        }
+            test.NegativeTimeCalculationMethod();
+        }*/
         else
         {
             Console.WriteLine("Error: Something went wrong");

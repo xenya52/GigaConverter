@@ -8,6 +8,7 @@ namespace GigaConverter
 {
     internal class Length : InputAndSolution
     {
+        
         // Längen =  Km, 1000; M, 10; Dm, 10; Cm, 10; Mm 10; Mk, 1000; Nm, 1000;
         private int[] LengthsChain = new int[7]
         {
