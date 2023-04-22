@@ -4,7 +4,7 @@ class program
 {
     public static void Main(string[] args)
     {
-        Time test = new();
+        Datasize test = new();
         Console.WriteLine("Define UserNumberInput");
         test.UserNumberInput = Convert.ToDouble(Console.ReadLine());
         Console.WriteLine("UserDesicionInput");
@@ -12,7 +12,13 @@ class program
         Console.WriteLine("UserDesicionOutput");
         test.UserDesicionOutput = Convert.ToInt32(Console.ReadLine());
         
-        //LengthCalculationmethodtest
+        /*  !!!NOTE!!!
+            Try to make a Positive...Chain and a Negative... it could be the cause for the Negativ chain issues,
+            because, you only write down the calculation method from large, to small that will force you too multiply
+            aniway try it out and eventualy see something what you can universal use... Date 22.04.2023
+         */
+        
+        /*Time!!!
         if (test.UserDesicionInput < test.UserDesicionOutput)
         {
             test.PositiveTimeCalculationMethod();
@@ -21,6 +27,15 @@ class program
         {
             test.NegativeTimeCalculationMethod();
         }*/
+        //Data test
+        if (test.UserDesicionInput < test.UserDesicionOutput)
+        {
+            test.PositiveDataCalculationMethod();
+        }
+        /* Issues... else if (test.UserDesicionInput > test.UserDesicionOutput)
+        {
+            test.NegativeDataCalculationMethod();
+        } */
         else
         {
             Console.WriteLine("Error: Something went wrong");
