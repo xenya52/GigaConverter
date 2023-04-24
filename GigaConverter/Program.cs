@@ -28,17 +28,6 @@ class program
             test.NegativeTimeCalculationMethod();
         }*/
         //Data test
-        if (test.UserDesicionInput < test.UserDesicionOutput)
-        {
-            test.PositiveDataCalculationMethod();
-        }
-        /* Issues... else if (test.UserDesicionInput > test.UserDesicionOutput)
-        {
-            test.NegativeDataCalculationMethod();
-        } */
-        else
-        {
-            Console.WriteLine("Error: Something went wrong");
-        }
+        test.DataCalculationMethod();
     }
 }
